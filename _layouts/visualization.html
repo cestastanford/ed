@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}"/>
+
+  <!-- Basic meta elements -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+  <!--   Dublin Core metadata for Zotero -->  
+  <meta name="DC.title" content="{{ page.title }}" />
+  <meta name="DC.creator" content="{{ page.author }}" />
+  <meta name="DC.contributor" content="{{ page.editor }}" />
+  <meta name="DC.date" content="{{ page.publication-date }}" />
+  <meta name="DC.rights" content="{{ page.rights }}" />
+  <meta name="DC.source" content="{{ site.title }}" />
+  
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="{{ page.title }}"/>
+  <meta property="og:author" content="{{ page.author }}"/>
+  <meta property="og:book:release_date" content="{{ page.publication-date }}"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}"/>
+  <meta property="og:image" content="http://elotroalex.github.io/ed/public/apple-touch-icon-precomposed.png"/>
+   
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }}
+    {% endif %}
+  </title>
+
+  <!-- CSS links -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/cesta.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/ed.css"/>
+
+ 
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png"/>
+  <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.baseurl }}/atom.xml"/>
+
+
+<!--<link type="text/css" href="bower_components/palladio/palladio.css" rel="stylesheet" />-->
+<link type="text/css" href="bower_components/palladio-timeline-component/dist/palladio-timeline-component.css" rel="stylesheet" />
+<link type="text/css" href="bower_components/palladio-facet-component/dist/palladio-facet-component.css" rel="stylesheet" />
+<link type="text/css" href="bower_components/palladio-timespan-component/dist/palladio-timespan-component.css" rel="stylesheet" />
+<link type="text/css" href="bower_components/palladio-graph-component/dist/palladio-graph-component.css" rel="stylesheet" />
+<link type="text/css" href="bower_components/palladio-map-component/dist/palladio-map-component.css" rel="stylesheet" />
+<link type="text/css" href="bower_components/palladio-table-component/dist/palladio-table-component.css" rel="stylesheet" />
+<link type="text/css" href="bower_components/palladio-cards-component/dist/palladio-cards-component.css" rel="stylesheet" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+<script src="bower_components/palladio/palladio.js"></script>
+<script src="bower_components/palladio-timeline-component/dist/palladio-timeline-component.min.js"></script>
+<script src="bower_components/palladio-facet-component/dist/palladio-facet-component.min.js"></script>
+<script src="bower_components/palladio-timespan-component/dist/palladio-timespan-component.min.js"></script>
+<script src="bower_components/palladio-graph-component/dist/palladio-graph-component.min.js"></script>
+<script src="bower_components/palladio-map-component/dist/palladio-map-component.min.js"></script>
+<script src="bower_components/palladio-table-component/dist/palladio-table-component.min.js"></script>
+<script src="bower_components/palladio-cards-component/dist/palladio-cards-component.js"></script>
+  
+  
+</head>
+  <body>
+    
+    <!-- This if statement decides which sidebar to use -->
+    {% if page.toc %}
+    {% include sidebar-toc.html %}
+    {% else %}
+    {% include sidebar.html %}
+    {% endif %}
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+    <div class="org"><a href="http://www.stanford.edu">Stanford</a> | CESTA</div>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+            <br><small>{{ site.tagline }}</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="content">
+        {{ content }}
+<div id="mapView-id-here"></div>
+<div id="timeline-id-here"></div>
+<div id="facet-id-here"></div>
+<div id="tableView-id-here"></div>
+      </div>
+    </div>
+    
+
+<!--
+    Palladio Brick info
+    -->
+
+
+
+<script>
+var components = startPalladio(['palladioTimelineComponent', 'palladioFacetComponent', 'palladioTimespanComponent', 'palladioGraphComponent', 'palladioMapComponent', 'palladioTableComponent', 'palladioCardsComponent']);
+components.loadData('20160513_voltaire.json', function() {
+      components.promiseAdd('map', '#mapView-id-here', {
+        height: "600px",
+        showSettings: false
+      }).then(function(opts) {
+        opts.importState({"center":[44.87144275016589,5.64697265625],"zoom":6,"tileSets":[{"url":null,"mbId":"cesta.hd9ak6ie","enabled":true,"description":"Land"}],"layers":[{"aggDescription":"Number of Correspondents","aggregateKey":null,"aggregationType":"COUNT","color":"#666","countBy":"EE BIO ID","description":"GNID Source - GNID Destination","enabled":true,"layerType":"data","descriptiveDimKey":"Place Name","mapping":{"sourceCoordinatesKey":"LatLon","sourceCoordinatesType":["GNID type"],"sourceCoordinatesDescription":"GNID Source","destinationCoordinatesKey":"LatLon","destinationCoordinatesType":["GNID type"],"destinationCoordinatesDescription":"GNID Destination"},"pointSize":true,"showLinks":true,"type":"point-to-point"}]});
+      });
+      components.promiseAdd('facet', '#facet-id-here', {
+        height: "300px",
+        showControls: false,
+        showSettings: false,
+        showAccordion: false,
+        showDropArea: false,
+        dimensions: components.dimensionsFromKeys(["Full Name","Nationality","Correspondent Role","Gender Group"])
+      });
+      components.promiseAdd('timeline', '#timeline-id-here', {
+        showControls: false,
+        showSettings: false,
+        showAccordion: false,
+        height: 300
+      }).then(function(opts) {
+        opts.date(components.dimensionFromKey("Letter Year"));
+        opts.group(components.dimensionFromKey("Nationality"));
+      });
+      components.promiseAdd('table', '#tableView-id-here', {
+        height: "300px",
+        showSettings: false,
+        row: components.dimensionFromKey("EE DOI"),
+        dimensions: components
+          .dimensionsFromKeys(["Full Name","Correspondent Role","Gender Group","Nationality"])
+      });
+});
+</script>
+
+<!--
+end Palladio brick -->
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

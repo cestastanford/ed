@@ -1,0 +1,7 @@
+---
+layout: visualization
+title: Voltaire
+
+---
+
+

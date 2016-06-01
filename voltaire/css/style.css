@@ -1,0 +1,342 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,300italic,400italic,200italic|Merriweather:400italic,300italic,400,300);
+
+/**  Basic Page CSS **/
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  position: relative;
+  color:#4d4d47;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  margin: 3em 0 1.53em 0;
+}
+h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    margin: 2em 0 1em 0;
+}
+
+a {
+	color:#74aad8;
+}
+
+a:hover {
+	color:#93bde1;
+	border:0;
+	text-decoration: none;
+}
+
+
+/**  Header Navigation **/
+
+header .navbar {
+  padding: 30px 0;
+  transition: all .5s ease-out;
+}
+
+header .navbar-default {
+  background-color: transparent;
+  border: none;
+}
+
+header .navbar-default .navbar-nav a {
+  color: white;
+  padding: 5px 8px;
+}
+
+header .navbar-default .navbar-nav a:hover {
+  color: #acaca5;
+}
+
+header .navbar-default .navbar-nav .active a {
+  font-weight: 300;
+  color: #acaca5;
+  background: transparent;
+  border-bottom: 1px solid #acaca5;
+  text-shadow: none;
+}
+
+header .navbar-default .navbar-nav .active a:hover {
+  color: #E15D5F;
+  background: transparent;
+  text-shadow: none;
+}
+
+/**  Navbar Brand **/
+
+header .navbar-brand {
+  background: url(../../img/mroflseal_light2.png);
+  background-repeat: no-repeat;
+  background-position: 10px 0;
+  background-size: 100px;
+  height: auto;
+}
+
+header .navbar-brand h1 {
+  color: white;
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 400;
+  padding-left: 110px;
+  padding-bottom:.5em;
+  font-family:'Merriweather', serif;
+}
+
+header .navbar-brand span.subhead {
+  display: block;
+  font-family: "Source Sans Pro", serif;
+  font-size: 1em;
+  font-weight: 200;
+
+}
+
+/**  Navbar Toggle **/
+header .navbar-toggle {
+  background-color: #C2C2C2;
+}
+
+header .navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+@media only screen
+and (max-width: 768px) {
+  header .navbar-collapse.in {
+    background-color: rgba(0,0,0, .5);
+  }
+}
+
+/**  nav inbody **/
+
+header .inbody {
+  background: rgba(140, 21, 21, .9)
+}
+
+header .navbar.inbody {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+header .navbar.inbody .navbar-nav {
+  padding-top: 10px;
+}
+
+header .inbody .navbar-brand {
+  background-size: 43px;
+  background-position: top left;
+  margin-top: 5px;
+  padding-bottom: 0;
+  margin-left: 10px;
+}
+
+header .inbody .navbar-brand h1 {
+  font-size: 1.1em;
+  padding-left: 38px;
+}
+
+header .inbody .navbar-brand span.subhead {
+  display: none;
+}
+
+/**  Carousel Fade **/
+
+.carousel.fade {
+  opacity: 1;
+}
+
+.carousel.fade .item {
+  transition: opacity ease-out .7s;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+
+.carousel.fade .item:first-child {
+  top: auto;
+  opacity: 0;
+  position: relative;
+}
+
+.carousel.fade .item.active {
+  opacity: 1;
+}
+
+.carousel-control {
+  opacity: 0;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+  background-image: none;
+}
+
+#featured .item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+.item {
+
+  width: 100%;
+  height: 100%;
+  }
+
+.gradient:after {
+	    content: '';
+	    position: absolute;
+	    width: inherit;
+	    height: inherit;
+	    top: 0;
+	    left: 0;
+	    background: rgba(206,204,203,.5);
+  }
+
+/**  Page **/
+.page {
+  padding: 50px 0;
+}
+
+.page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+/**  Page -- Articles **/
+
+#articles {
+  background-color: #40403B;
+  color:#fff;
+}
+
+article {
+	margin-bottom:4em;
+}
+
+
+
+article h3 {
+  font-weight: 300;
+  font-size: 1.4em;
+  color: #d1d1cd;
+  padding-bottom: 5px;
+}
+
+article p {
+  font-size: .8em;
+}
+
+.title {
+	  margin-left:6em;  
+}
+
+.title a:hover {
+	border:0;
+}
+
+article img {
+  width: 5em;
+  float:left;
+  margin-top:-1em; 
+  -webkit-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+  -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -ms-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+	border: 2px solid #686860
+  }
+
+article:hover img {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  border: 2px solid #fff;
+}
+
+/** citation **/
+#citation p.citation {
+	font-family: Merriweather, serif;
+	font-weight: 300;
+	font-size:.75em;
+
+}
+
+/** Project **/
+
+#project{
+	padding-bottom: 200px;
+	background-color:rgba(206,204,203,.9)
+}
+
+#project .row {
+	padding-top: 4em;
+}
+
+#fullwidth {
+	background:url('../../img/background.jpg') no-repeat top center;
+	background-size: cover;
+	min-height: 600px;
+	padding:200px;
+	border: .5px solid #ccc;
+}
+
+
+/**  Footer **/
+
+footer {
+  background-color: #191917;
+  font-size: .8em;
+  padding: 40px 0 40px 0;
+}
+
+#funding {
+    background: url(../../img/neh_logo_rev.png);
+    background-repeat: no-repeat;
+	
+}
+
+
+footer a {
+  color: #000;
+}
+
+footer a:hover {
+  color: #acaca5 !important;
+}
+
+footer .phone {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #E0E6AE;
+}
+
+footer .navbar {
+  margin-bottom: 0;
+  min-height: 0;
+}
+
+footer .navbar-default {
+  background-color: transparent;
+  border: none;
+  margin-right: 40px;
+}
+
+footer .navbar-nav>li a {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-decoration: underline;
+  color: #acaca5 !important;
+}
+
